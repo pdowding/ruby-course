@@ -18,11 +18,11 @@ end
 # # # # # # #
 
 def multiply(x, y)
-  result = x * y
+   x * y
 end
 
 def give_me_seven
-  # TODO: Use the `multiply` method
+  multiply(1,7)
 end
 
 
@@ -35,9 +35,20 @@ module ClassesAndInstances
   class Animal
     attr_reader :name
     def initialize(name)
-      # TODO: Set name
+     $name = name
     end
   end
+
+  animal=Animal.new('bird')
+  animal.name
+
+
+
+
+
+
+
+
 
   # # # # # # # # # # # #
   # Classes/Instances 2 #
@@ -48,7 +59,9 @@ module ClassesAndInstances
     def initialize
       @animals = []
     end
-
+    def adopt
+      @animals << animal
+    end
     # TODO: Write a method `adopt` that takes one paramater `animal`
     # and adds it to its animals array
   end
@@ -60,7 +73,7 @@ module ClassesAndInstances
     attr_accessor :size
     # TODO: Fix incorrect use of local and instance variables
     def initialize(initial_size)
-      size = initial_size
+      @size = initial_size
     end
 
     def grow
@@ -124,6 +137,7 @@ class ArrayProblems
 
   def self.add_cake_to_array(array)
     # TODO: Complete this method
+
   end
 
   # # # # # # #
