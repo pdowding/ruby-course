@@ -39,9 +39,6 @@ module ClassesAndInstances
     end
   end
 
-  animal=Animal.new('bird')
-  animal.name
-
 
 
 
@@ -59,18 +56,18 @@ module ClassesAndInstances
     def initialize
       @animals = []
     end
-    def adopt
-      @animals << 'lion'
+    def adopt(animal)
+
+      @animals << animal
 
     end
     # TODO: Write a method `adopt` that takes one paramater `animal`
     # and adds it to its animals array
 
+
   end
 
-    lion = Zoo.new
-    tiger = Zoo.new
-    liger = Zoo.new
+
 
   # # # # # # # # # # # #
   # Classes/Instances 3 #
@@ -78,12 +75,12 @@ module ClassesAndInstances
   class Plant
     attr_accessor :size
     # TODO: Fix incorrect use of local and instance variables
-    def initialize(initial_size)
-      @initial_size = initial_size
+    def initialize(size=2)
+      @size = size
     end
 
     def grow
-      size = size + 1
+      @size = size + 1
     end
   end
 end
@@ -100,12 +97,21 @@ module GettersSetters
       @secret = 50
     end
     # TODO: Write getter and setter methods for secret
+    def secret=(secret)
+      @secret=secret
+    end
+
+    def secret
+      @secret
+    end
   end
 
   # # # # # # # # # # #
   # Getters/Setters 2 #
   # # # # # # # # # # #
   class Person
+
+
 
     def initialize(name, age)
       @name = name
@@ -116,14 +122,16 @@ module GettersSetters
     # NOTE: Don't provide any more access than necessary.
     #       For example, don't use attr_accessible when all you really need is attr_writer
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-    def age
-      @age
-    end
+    attr_reader :age
 
+
+
+    attr_writer :secret
     def secret=(value)
       @secret = value
     end
 
+    attr_accessor :name
     def name
       @name
     end
@@ -143,7 +151,7 @@ class ArrayProblems
 
   def self.add_cake_to_array(array)
     # TODO: Complete this method
-
+    array << "cake"
   end
 
   # # # # # # #
@@ -152,6 +160,7 @@ class ArrayProblems
 
   def self.uppercase_third_element(array)
     # TODO: Complete this method
+    array[2].upcase!
   end
 
   # # # # # # #
@@ -160,6 +169,10 @@ class ArrayProblems
 
   def self.iterate_and_print(array)
     # TODO: Iterate over this array and `puts` each element.
+    array.each do |x|
+      puts x
+
+    end
   end
 
   # # # # # # #
@@ -168,6 +181,7 @@ class ArrayProblems
 
   def self.select_higher(array, min)
     # TODO: Select and return all numbers higher than `min`
+    array.select {|number| number>min}
   end
 
   # # # # # # #
@@ -176,6 +190,7 @@ class ArrayProblems
 
   def self.greet_everyone(people)
     # TODO: Select and return all numbers higher than `min`
+    people.map { |e| "Hello, #{e}" }
   end
 end
 
@@ -188,6 +203,7 @@ class HashProblems
 
   def self.create_empty_hash
     # TODO: Complete this method
+    empty_hash = {}
   end
 
   # # # # # # #
@@ -196,6 +212,7 @@ class HashProblems
 
   def self.create_veggie_color_hash
     # TODO: Complete this method by returning a hash
+    veggie_color_hash ={tomato: "red", kale: "green"}
   end
 
   # # # # # # #
