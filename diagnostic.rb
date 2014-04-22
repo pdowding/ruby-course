@@ -60,11 +60,17 @@ module ClassesAndInstances
       @animals = []
     end
     def adopt
-      @animals << animal
+      @animals << 'lion'
+
     end
     # TODO: Write a method `adopt` that takes one paramater `animal`
     # and adds it to its animals array
+
   end
+
+    lion = Zoo.new
+    tiger = Zoo.new
+    liger = Zoo.new
 
   # # # # # # # # # # # #
   # Classes/Instances 3 #
