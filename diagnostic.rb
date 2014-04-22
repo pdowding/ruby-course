@@ -35,7 +35,7 @@ module ClassesAndInstances
   class Animal
     attr_reader :name
     def initialize(name)
-     $name = name
+     @name = name
     end
   end
 
@@ -73,7 +73,7 @@ module ClassesAndInstances
     attr_accessor :size
     # TODO: Fix incorrect use of local and instance variables
     def initialize(initial_size)
-      @size = initial_size
+      @initial_size = initial_size
     end
 
     def grow
