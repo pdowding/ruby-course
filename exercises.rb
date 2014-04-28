@@ -5,17 +5,25 @@ module Exercises
   #  - Returns "nope" if `str` is "wishes"
   def self.ex0(str)
     # TODO
+    if str == "wishes"
+      return "nope"
+    else
+
+    return str * 3
+    end
   end
 
   # Exercise 1
   #  - Returns the number of elements in the array
   def self.ex1(array)
     # TODO
+    return array.length
   end
 
   # Exercise 2
   #  - Returns the second element of an array
   def self.ex2(array)
+    return array[1]
     # TODO
   end
 
@@ -23,18 +31,29 @@ module Exercises
   #  - Returns the sum of the given array of numbers
   def self.ex3(array)
     # TODO
+    sum = 0
+    array.each do |i|
+      sum += i
+    end
+    sum
   end
 
   # Exercise 4
   #  - Returns the max number of the given array
   def self.ex4(array)
     # TODO
+    max_value = array[0]
+    for i in 0 ... array.length
+      max_value = array[i] if array[i]> max_value
+    end
+    return max_value
   end
 
   # Exercise 5
   #  - Iterates through an array and `puts` each element
   def self.ex5(array)
     # TODO
+    array.each {|i| puts i}
   end
 
   # Exercise 6
@@ -43,6 +62,11 @@ module Exercises
   #    it to 'GODZILLA' instead
   def self.ex6(array)
     # TODO
+    if array.last == "panda"
+      array.push ("GODZILLA")
+    else
+    array.push ("panda")
+    end
   end
 
   # Exercise 7
